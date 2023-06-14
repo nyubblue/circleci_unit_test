@@ -14,8 +14,7 @@ jobs:
       - run:
           name: Install nodjs
           command: |
-             npm install -g n
-             n 13.8.0
+             curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 
 workflows:
   say-hello-workflow:
