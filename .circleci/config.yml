@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: Install dependencies
-          command: echo "hello"
+          command: echo "hello" 
 
 workflows:
   say-hello-workflow:
