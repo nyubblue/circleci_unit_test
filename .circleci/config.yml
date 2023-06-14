@@ -2,15 +2,13 @@ version: 2.1
 jobs:
   say-hello:
     docker:
-      - image: circleci/python:3.7
+      - image: python:3.9.16-alpine
     steps:
       - checkout
       - run:
           name: Install dependencies
           command: |
             echo | pwd
-
-
 workflows:
   say-hello-workflow:
     jobs:
