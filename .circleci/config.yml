@@ -5,11 +5,13 @@ jobs:
       - image: circleci/python
     steps:
       - checkout
-      - python/install-packages:
-          pkg-manager: pip
       - run:
           name: Install dependencies
-          command: echo "hello" 
+          command: |
+            sudo apt-get update
+            sudo apt-get install -y curl
+            curl -sL https://deb.nodesource.com/setup_13.x | bash -
+            sudo apt-get install -y nodejs=13.8.0-1nodesource1
 
 workflows:
   say-hello-workflow:
