@@ -5,6 +5,8 @@ jobs:
       - image: circleci/python
     steps:
       - checkout
+      - python/install-packages:
+          pkg-manager: pip
       - run:
           name: Install dependencies
           command: echo "hello" 
