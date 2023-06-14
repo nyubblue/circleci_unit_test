@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   say-hello:
     docker:
-      - image: circleci/python
+      - image: circleci/python:3.8
     steps:
       - checkout
       - run:
