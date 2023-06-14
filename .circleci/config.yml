@@ -10,8 +10,7 @@ jobs:
           command: |
             sudo apt-get update
             sudo apt-get install -y curl
-            curl -s https://deb.nodesource.com/setup_13.x | sudo bash
-            sudo apt install -y nodejs
+
 
 workflows:
   say-hello-workflow:
