@@ -10,8 +10,17 @@ jobs:
           command: |
             apk add --no-cache bash
             apk add --no-cache curl
-            curl -d 'email=abc@gmail.com' https://kvdb.io
-            
+            export VAR1=byun
+      - run:
+          name: step 1
+          command: |
+            echo $VAR1
+              if "${VAR1}" | grep "yu"
+              then
+                echo "s1"
+              else
+                echo "s2"
+              fi
 workflows:
   say-hello-workflow:
     jobs:
