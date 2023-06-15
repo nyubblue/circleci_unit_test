@@ -9,7 +9,8 @@ jobs:
           name: Install dependencies
           command: |
             apk add --no-cache bash
-            echo | pwd
+            apk add --no-cache curl
+            
 workflows:
   say-hello-workflow:
     jobs:
