@@ -10,17 +10,15 @@ jobs:
           command: |
             apk add --no-cache bash
             apk add --no-cache curl
-            export VAR1=byun
       - run:
           name: step 1
           command: |
-            echo $VAR1
-              if "${VAR1}" | grep "yu"
-              then
-                echo "s1"
-              else
-                echo "s2"
-              fi
+            if curl "http://54.164.88.108:3030/api/status" | grep "ok"
+            then
+              return 0
+            else
+              return 1
+            fi
 workflows:
   say-hello-workflow:
     jobs:
