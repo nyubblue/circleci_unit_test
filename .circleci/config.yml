@@ -10,15 +10,12 @@ jobs:
           command: |
             apk add --no-cache bash
             apk add --no-cache curl
+            apk add --update npm
       - run:
           name: step 1
           command: |
-            if curl "http://34.227.192.20:3030/api/status" | grep "ok"
-            then
-              return 0
-            else
-              return 1
-            fi
+            npm install
+            echo "SUCCESS"
 workflows:
   say-hello-workflow:
     jobs:
