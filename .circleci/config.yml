@@ -13,7 +13,7 @@ jobs:
       - run:
           name: step 1
           command: |
-            if curl "http://54.164.88.108:3030/api/status" | grep "ok"
+            if curl "http://34.227.192.20:3030/api/status" | grep "ok"
             then
               return 0
             else
