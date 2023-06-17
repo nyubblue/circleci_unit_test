@@ -2,15 +2,18 @@ version: 2.1
 jobs:
   say-hello:
     docker:
-      - image: python:3.9.16-alpine
+      - image: node:13-alpine
     steps:
       - checkout
       - run:
           name: Install dependencies
           command: |
+            apk update
+            apk add --no-cache python3
+            pip3 install --upgrade pip
+            pip3 install awscli
             apk add --no-cache bash
             apk add --no-cache curl
-            apk add --update npm
       - run:
           name: step 1
           command: |
